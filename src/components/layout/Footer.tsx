@@ -46,8 +46,8 @@ export function Footer() {
                     <ul className="space-y-4">
                         <li className="flex items-center space-x-3 text-[var(--color-brand-charcoal)]/80">
                             <Instagram size={18} />
-                            <a href="#" className="hover:text-[var(--color-brand-ink)] hover-underline-animation transition-colors text-sm">
-                                @madicake
+                            <a href="https://instagram.com/madigcakes" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-brand-ink)] hover-underline-animation transition-colors text-sm">
+                                @madigcakes
                             </a>
                         </li>
                         <li className="flex items-center space-x-3 text-[var(--color-brand-charcoal)]/80">

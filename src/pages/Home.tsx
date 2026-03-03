@@ -45,9 +45,46 @@ export default function Home() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.4 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-serif text-[var(--color-brand-cream)] mb-8 tracking-wide drop-shadow-sm"
+                        className="text-5xl md:text-7xl lg:text-8xl font-serif text-[var(--color-brand-cream)] mb-8 tracking-wide drop-shadow-sm flex flex-col items-center"
                     >
-                        Madi Cakes &mdash;<br />Sweet That's Style
+                        <span>Madi Cakes &mdash;</span>
+                        <span className="flex items-center mt-2">
+                            <motion.span
+                                initial="hidden"
+                                animate="visible"
+                                variants={{
+                                    visible: {
+                                        transition: {
+                                            delayChildren: 1.2,
+                                            staggerChildren: 0.15,
+                                        },
+                                    },
+                                }}
+                            >
+                                {"Sweet That's Style".split('').map((char, index) => (
+                                    <motion.span
+                                        key={index}
+                                        variants={{
+                                            hidden: { display: 'none' },
+                                            visible: { display: 'inline' },
+                                        }}
+                                    >
+                                        {char === ' ' ? '\u00A0' : char}
+                                    </motion.span>
+                                ))}
+                            </motion.span>
+                            <motion.span
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: [0, 1, 0] }}
+                                transition={{
+                                    duration: 0.8,
+                                    repeat: Infinity,
+                                    delay: 1.2,
+                                    ease: "linear"
+                                }}
+                                className="inline-block ml-1 w-[3px] md:w-[4px] h-[0.9em] bg-[var(--color-brand-cream)]"
+                            />
+                        </span>
                     </motion.h1>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
