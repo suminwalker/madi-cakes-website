@@ -64,6 +64,53 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* How It Works / Moments Section */}
+            <section className="py-24 px-6 md:px-12 bg-[var(--color-brand-cream)] text-center">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={FADE_IN_VARIANTS}
+                    className="max-w-3xl mx-auto mb-16"
+                >
+                    <h2 className="text-4xl md:text-5xl font-serif mb-6 text-[var(--color-brand-charcoal)]">Designed For Your Moments</h2>
+                    <p className="mb-10 text-[var(--color-brand-charcoal)]/80 text-lg font-light leading-relaxed">From intimate Manhattan dinner parties to grand celebrations, find the perfect centerpiece to elevate every occasion.</p>
+                    <Link to="/custom-orders">
+                        <Button variant="outline" size="lg">Request Custom Order</Button>
+                    </Link>
+                </motion.div>
+
+                {/* Moments Image Grid */}
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={STAGGER_CONTAINER}
+                    className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-7xl mx-auto"
+                >
+                    {[
+                        { id: 1, img: '/images/home/moment-1.jpg' },
+                        { id: 2, img: '/images/home/moment-2.jpg' },
+                        { id: 3, img: '/images/home/moment-3.jpg' },
+                        { id: 4, img: '/images/home/moment-4.jpg' },
+                        { id: 5, img: '/images/home/moment-5.jpg' }
+                    ].map((item, idx) => (
+                        <motion.div
+                            key={item.id}
+                            variants={FADE_IN_VARIANTS}
+                            className={`relative aspect-[3/4] overflow-hidden bg-[var(--color-brand-sand)] ${idx === 2 ? 'md:-translate-y-8' : idx === 1 || idx === 3 ? 'md:-translate-y-4' : ''
+                                } ${idx === 4 ? 'col-span-2 md:col-span-1 aspect-[16/9] md:aspect-[3/4]' : ''}`}
+                        >
+                            <img
+                                src={item.img}
+                                alt={`Madi Cake Moment ${item.id}`}
+                                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                            />
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </section>
+
             {/* Featured Signature Cakes */}
             <section className="py-24 px-6 md:px-12 bg-[var(--color-brand-cream)]">
                 <div className="max-w-7xl mx-auto">
@@ -115,53 +162,6 @@ export default function Home() {
                         ))}
                     </motion.div>
                 </div>
-            </section>
-
-            {/* How It Works / Moments Section */}
-            <section className="py-24 px-6 md:px-12 bg-[var(--color-brand-cream)] text-center">
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={FADE_IN_VARIANTS}
-                    className="max-w-3xl mx-auto mb-16"
-                >
-                    <h2 className="text-4xl md:text-5xl font-serif mb-6 text-[var(--color-brand-charcoal)]">Designed For Your Moments</h2>
-                    <p className="mb-10 text-[var(--color-brand-charcoal)]/80 text-lg font-light leading-relaxed">From intimate Manhattan dinner parties to grand celebrations, find the perfect centerpiece to elevate every occasion.</p>
-                    <Link to="/custom-orders">
-                        <Button variant="outline" size="lg">Request Custom Order</Button>
-                    </Link>
-                </motion.div>
-
-                {/* Moments Image Grid */}
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    variants={STAGGER_CONTAINER}
-                    className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-7xl mx-auto"
-                >
-                    {[
-                        { id: 1, img: '/images/home/moment-1.jpg' },
-                        { id: 2, img: '/images/home/moment-2.jpg' },
-                        { id: 3, img: '/images/home/moment-3.jpg' },
-                        { id: 4, img: '/images/home/moment-4.jpg' },
-                        { id: 5, img: '/images/home/moment-5.jpg' }
-                    ].map((item, idx) => (
-                        <motion.div
-                            key={item.id}
-                            variants={FADE_IN_VARIANTS}
-                            className={`relative aspect-[3/4] overflow-hidden bg-[var(--color-brand-sand)] ${idx === 2 ? 'md:-translate-y-8' : idx === 1 || idx === 3 ? 'md:-translate-y-4' : ''
-                                } ${idx === 4 ? 'col-span-2 md:col-span-1 aspect-[16/9] md:aspect-[3/4]' : ''}`}
-                        >
-                            <img
-                                src={item.img}
-                                alt={`Madi Cake Moment ${item.id}`}
-                                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                            />
-                        </motion.div>
-                    ))}
-                </motion.div>
             </section>
         </div>
     );
