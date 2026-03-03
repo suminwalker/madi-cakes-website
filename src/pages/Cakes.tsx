@@ -62,9 +62,6 @@ export default function Cakes() {
                                         <h3 className="font-serif text-2xl text-[var(--color-brand-charcoal)] group-hover:text-[var(--color-brand-ink)] transition-colors">
                                             {cake.name}
                                         </h3>
-                                        <span className="font-sans text-sm tracking-widest text-[var(--color-brand-charcoal)]/80">
-                                            {cake.price}
-                                        </span>
                                     </div>
 
                                 </motion.div>
@@ -108,9 +105,6 @@ export default function Cakes() {
                                 <h2 className="text-4xl font-serif text-[var(--color-brand-charcoal)] mb-4">
                                     {selectedCake.name}
                                 </h2>
-                                <p className="text-xl font-light text-[var(--color-brand-charcoal)]/80 mb-6">
-                                    {selectedCake.price}
-                                </p>
                                 <p className="text-base text-[var(--color-brand-charcoal)]/70 leading-relaxed mb-10 border-t border-[var(--color-brand-sage)] pt-6">
                                     {selectedCake.description}
                                 </p>

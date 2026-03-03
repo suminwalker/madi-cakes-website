@@ -191,9 +191,6 @@ export default function Home() {
                                     <h3 className="font-serif text-xl text-[var(--color-brand-charcoal)] group-hover:text-[var(--color-brand-ink)] transition-colors">
                                         {cake.name}
                                     </h3>
-                                    <p className="font-sans text-sm tracking-widest text-[var(--color-brand-charcoal)]/70">
-                                        {cake.price}
-                                    </p>
                                 </div>
                             </motion.div>
                         ))}
